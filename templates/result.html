@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Echonest | Sentiment Analysis</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-design-iconic-font/css/material-design-iconic-font.min.css') }}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form>
+					<h3><i class="zmdi zmdi-toys"></i> Echonest</h3>
+					<p>Results: <i class="zmdi zmdi-plus-circle"></i> / <i class="zmdi zmdi-minus-circle"></i></p>
+					<label class="form-group">
+						{% if prediction==1 %}
+						<h4>Statement is Positive <i class="zmdi zmdi-plus-circle"></i></h4>
+						{% elif prediction==0 %}
+						<h4>Statement is Negative <i class="zmdi zmdi-minus-circle"></i></h4>
+						{% endif %}
+						<span class="border"></span>
+					</label>
+					<br>
+					
+					<a href="/back">Back 
+						<i class="zmdi zmdi-arrow-left"></i></a>
+					
+
+					<br><br>
+					<p><a href="https://github.com/apratimshukla6">F<sub>1</sub> score: 0.7673, Made with love by Apratim <i class="zmdi zmdi-github-alt"></a></i></p>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>
